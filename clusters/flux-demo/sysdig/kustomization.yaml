@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: sysdig
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./add-ons/sysdig
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-baseline
+    namespace: flux-system
